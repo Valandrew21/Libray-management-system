@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📚 Welcome to the Library</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="landing-container">
+        <div class="content">
+            <h1 class="fade-in">📖 Welcome to Our School Library</h1>
+            <p class="fade-in">Explore, borrow, and reserve books with ease!</p>
+            <a href="library.html" class="enter-btn fade-in">📚 Enter Library</a>
+            <button id="toggleDarkMode" class="dark-mode-btn">🌙 Dark Mode</button>
+        </div>
+    </div>
+
+    <audio id="clickSound">
+        <source src="click.mp3" type="audio/mp3">
+    </audio>
+
+    <script>
+        document.querySelector('.enter-btn').addEventListener('click', function() {
+            document.getElementById('clickSound').play();
+        });
+
+        document.getElementById('toggleDarkMode').addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+            localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+        });
+
+        // Check saved dark mode preference
+        if (localStorage.getItem('darkMode') === 'true') {
+            document.body.classList.add('dark-mode');
+        }
+    </script>
+
+</body>
+</html>

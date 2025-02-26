@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="library.css">
+    <title>📚 Library Management</title>
+    <link rel="stylesheet" href="library.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>📖 School Library System</h1>
+
+    <div class="user-role">
+        <label>Select Role: </label>
+        <select id="userRole">
+            <option value="student">Student</option>
+            <option value="admin">Admin</option>
+        </select>
+    </div>
+
+    <div class="book-form">
+        <h3>Add a New Book (Admin Only)</h3>
+        <input type="text" id="bookTitle" placeholder="Book Title">
+        <input type="text" id="bookAuthor" placeholder="Author">
+        <input type="text" id="bookGenre" placeholder="Genre">
+        <button onclick="addBook()">➕ Add Book</button>
+    </div>
+
+    <div class="search-bar">
+        <input type="text" id="searchBook" placeholder="🔍 Search books..." onkeyup="searchBooks()">
+    </div>
+
+    <h3>📚 Book Collection</h3>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>📕 Title</th>
+                    <th>✍️ Author</th>
+                    <th>📂 Genre</th>
+                    <th>📌 Status</th>
+                    <th>⚡ Actions</th>
+                </tr>
+            </thead>
+            <tbody id="bookList"></tbody>
+        </table>
+    </div>
+
+    <div id="notification" class="notification"></div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
